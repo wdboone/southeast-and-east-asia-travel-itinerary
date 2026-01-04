@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boone Asia Expedition 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent-gold: #d4af37;
+            --accent-gold-light: #f4d03f;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --text-light: #94a3b8;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Elegant Hero Header */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            padding: 80px 40px 100px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+            opacity: 0.6;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding: 8px 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 30px;
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .hero h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 24px;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            font-weight: 400;
+            margin-bottom: 40px;
+            max-width: 700px;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #e2e8f0;
+            font-size: 0.95rem;
+        }
+
+        .hero-meta-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Premium Container */
+        .container {
+            max-width: 1400px;
+            margin: -60px auto 0;
+            padding: 0 40px 80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Glass Navigation Cards */
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+
+        .nav-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: var(--radius);
+            padding: 28px 20px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light));
+            transform: scaleX(0);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-card:hover::before,
+        .nav-card.active::before {
+            transform: scaleX(1);
+        }
+
+        .nav-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: var(--accent-gold);
+        }
+
+        .nav-card.active {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-color: var(--accent-gold);
+            color: white;
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.3);
+        }
+
+        .nav-card-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .nav-card.active .nav-card-icon {
+            filter: brightness(1.5);
+        }
+
+        .nav-card-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: none;
+            animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* Premium Cards */
+        .card {
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            padding: 40px;
+            margin-bottom: 32px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent-gold), var(--accent-gold-light));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(212, 175, 55, 0.2);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
+            margin-bottom: 28px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .card-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #92400e;
+            margin: 12px 0;
+        }
+
+        .info-row {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+
+        .info-value {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Sophisticated Amenities Grid */
+        .amenities-section {
+            margin-top: 32px;
+        }
+
+        .amenities-header {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+        }
+
+        .amenity-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 16px;
+            background: #f8fafc;
+            border-radius: var(--radius-sm);
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .amenity-item:hover {
+            background: #f1f5f9;
+            transform: translateX(4px);
+        }
+
+        .amenity-icon {
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* Premium Button */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 28px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.4);
+            border-color: var(--accent-gold);
+        }
+
+        /* Info Cards Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .info-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .info-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light));
+            border-radius: var(--radius) var(--radius) 0 0;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .info-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .info-card h4 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .info-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .info-card strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Elegant Accordion */
+        .accordion-item {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .accordion-header {
+            padding: 24px 28px;
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .accordion-header:hover {
+            background: linear-gradient(135deg, #f1f5f9 0%, #f8fafc 100%);
+        }
+
+        .accordion-item.active .accordion-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-bottom-color: var(--accent-gold);
+        }
+
+        .accordion-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .accordion-item.active .accordion-title {
+            color: white;
+        }
+
+        .accordion-icon {
+            font-size: 1.1rem;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--text-light);
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+            color: var(--accent-gold);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 6000px;
+        }
+
+        .accordion-inner {
+            padding: 32px 28px;
+        }
+
+        /* Day Cards */
+        .day-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px;
+            margin-bottom: 24px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .day-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--accent-gold), var(--accent-gold-light));
+            border-radius: var(--radius) 0 0 var(--radius);
+        }
+
+        .day-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(4px);
+        }
+
+        .day-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .day-subtitle {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .activity-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .activity-list li {
+            padding: 12px 0 12px 32px;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            border-bottom: 1px solid #f8fafc;
+        }
+
+        .activity-list li:last-child {
+            border-bottom: none;
+        }
+
+        .activity-list li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-size: 0.7rem;
+        }
+
+        /* City Cards */
+        .city-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 36px;
+            margin-bottom: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .city-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .city-card h3 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 16px;
+        }
+
+        .city-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-gold), transparent);
+        }
+
+        .city-card p {
+            color: var(--text-secondary);
+            line-height: 1.9;
+            font-size: 0.95rem;
+        }
+
+        /* Tips Section */
+        .tip-section {
+            padding: 24px 0;
+        }
+
+        .tip-section h4 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .tip-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tip-section li {
+            padding: 14px 0 14px 36px;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.8;
+            border-bottom: 1px solid #f8fafc;
+        }
+
+        .tip-section li:last-child {
+            border-bottom: none;
+        }
+
+        .tip-section li::before {
+            content: '✦';
+            position: absolute;
+            left: 8px;
+            color: var(--accent-gold);
+            font-size: 1rem;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fef3c7 100%);
+            border: 2px solid #fbbf24;
+            border-radius: var(--radius);
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .highlight-box strong {
+            color: #92400e;
+            font-weight: 700;
+        }
+
+        .highlight-box p {
+            color: #78350f;
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .container {
+                padding: 0 24px 60px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 24px 80px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-meta {
+                gap: 20px;
+            }
+
+            .nav-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .nav-card {
+                padding: 20px 16px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .card, .accordion-inner, .day-card, .city-card {
+                padding: 24px;
+            }
+
+            .info-row {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-label">Executive Travel Portfolio</div>
+            <h1>Southeast & East Asia<br>Expedition 2026</h1>
+            <p class="hero-subtitle">A meticulously curated 17-day journey through Vietnam, Hong Kong, Macau, Guangzhou, and Shenzhen—designed for the discerning traveler.</p>
+            
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <div class="hero-meta-icon">📅</div>
+                    <div>
+                        <div style="font-size: 0.8rem; opacity: 0.7;">Duration</div>
+                        <strong>May 23 - June 8, 2026</strong>
+                    </div>
+                </div>
+                <div class="hero-meta-item">
+                    <div class="hero-meta-icon">🌏</div>
+                    <div>
+                        <div style="font-size: 0.8rem; opacity: 0.7;">Destinations</div>
+                        <strong>5 Cities · 2 Countries</strong>
+                    </div>
+                </div>
+                <div class="hero-meta-item">
+                    <div class="hero-meta-icon">✈️</div>
+                    <div>
+                        <div style="font-size: 0.8rem; opacity: 0.7;">Origin</div>
+                        <strong>Nashville, Tennessee</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Navigation -->
+        <div class="nav-grid">
+            <div class="nav-card active" onclick="showSection('hotels')">
+                <span class="nav-card-icon">🏨</span>
+                <div class="nav-card-label">Hotels</div>
+            </div>
+            <div class="nav-card" onclick="showSection('travel-info')">
+                <span class="nav-card-icon">📋</span>
+                <div class="nav-card-label">Travel Info</div>
+            </div>
+            <div class="nav-card" onclick="showSection('currency')">
+                <span class="nav-card-icon">💰</span>
+                <div class="nav-card-label">Currency</div>
+            </div>
+            <div class="nav-card" onclick="showSection('transport')">
+                <span class="nav-card-icon">🚇</span>
+                <div class="nav-card-label">Transport</div>
+            </div>
+            <div class="nav-card" onclick="showSection('cities')">
+                <span class="nav-card-icon">🌆</span>
+                <div class="nav-card-label">Cities</div>
+            </div>
+            <div class="nav-card" onclick="showSection('itinerary')">
+                <span class="nav-card-icon">📍</span>
+                <div class="nav-card-label">Itinerary</div>
+            </div>
+            <div class="nav-card" onclick="showSection('tips')">
+                <span class="nav-card-icon">💼</span>
+                <div class="nav-card-label">Pro Tips</div>
+            </div>
+        </div>
+
+        <!-- Hotels Section -->
+        <div id="hotels" class="content-section active">
+            <div class="section-header">
+                <h2 class="section-title">Luxury Accommodations</h2>
+                <p class="section-subtitle">Premium properties selected for location, service, and sophistication</p>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Hilton Saigon</h3>
+                    <p class="card-subtitle">Ho Chi Minh City, Vietnam</p>
+                    <div class="rating">★★★★★ Five-Star Luxury</div>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-label">Location</span>
+                    <span class="info-value">District 1, along the banks of the Saigon River</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Address</span>
+                    <span class="info-value">Me Linh Square, Ho Chi Minh City</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Year Opened</span>
+                    <span class="info-value">Early 2024</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Designer</span>
+                    <span class="info-value">Pierre-Yves Rochon</span>
+                </div>
+
+                <p style="margin-top: 24px; color: var(--text-secondary); line-height: 1.8;">A brand-new 40-story tower offering 228 luxurious guest rooms with stunning city and river views. The hotel boasts modern elegance, featuring floor-to-ceiling windows and contemporary décor that captures the essence of Saigon's dynamic spirit.</p>
+
+                <div class="amenities-section">
+                    <h4 class="amenities-header">Premium Amenities</h4>
+                    <div class="amenities-grid">
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> Prime District 1 location</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> Saigon River views</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> 11th floor outdoor pool</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> Full-service eforea Spa</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> State-of-the-art fitness center</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> Executive Lounge access</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> Residence Eleven (Cantonese)</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> The Strand Restaurant</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> Rooftop Song Bar</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> 24-hour concierge service</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> Complimentary high-speed WiFi</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> Walking distance to landmarks</div>
+                    </div>
+                </div>
+
+                <a href="https://www.hilton.com/en/hotels/sgnhihi-hilton-saigon/" target="_blank" class="btn-primary">
+                    Visit Website →
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Lanson Place Causeway Bay</h3>
+                    <p class="card-subtitle">Hong Kong, China (SAR)</p>
+                    <div class="rating">★★★★★ Small Luxury Hotels of the World</div>
+                </div>
+
+                <div class="info-row">
+                    <span class="info-label">Location</span>
+                    <span class="info-value">Heart of Causeway Bay, Hong Kong Island</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Affiliation</span>
+                    <span class="info-value">Small Luxury Hotels (SLH) · Hilton Portfolio</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Designer</span>
+                    <span class="info-value">Pierre-Yves Rochon</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Style</span>
+                    <span class="info-value">French-inspired boutique luxury</span>
+                </div>
+
+                <p style="margin-top: 24px; color: var(--text-secondary); line-height: 1.8;">Recently redesigned, this boutique property blends Hong Kong's legendary hospitality with understated French elegance. A serene sanctuary in vibrant Causeway Bay, featuring exceptionally spacious rooms with sophisticated décor and meticulous attention to every detail.</p>
+
+                <div class="amenities-section">
+                    <h4 class="amenities-header">Premium Amenities</h4>
+                    <div class="amenities-grid">
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> 5-min walk to MTR station</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> Exceptionally spacious rooms</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> French-inspired design</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> In-room kitchenettes</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> Nespresso machines</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> 55" Smart TVs</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> Dyson hair dryers</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> Pillow menu</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> Salon Lanson restaurant</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> 24-hour fitness center</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> Personalized service</div>
+                        <div class="amenity-item"><span class="amenity-icon">✓</span> Premium shopping nearby</div>
+                    </div>
+                </div>
+
+                <a href="https://www.lansonplace.com/causeway-bay/" target="_blank" class="btn-primary">
+                    Visit Website →
+                </a>
+            </div>
+        </div>
+
+        <!-- Travel Info Section -->
+        <div id="travel-info" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Essential Travel Information</h2>
+                <p class="section-subtitle">Visa requirements and entry protocols for U.S. citizens</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>🇻🇳 Vietnam</h4>
+                    <p><strong>Visa Status:</strong> Visa-free entry for up to 45 days (as of August 2023)</p>
+                    <p style="margin-top: 12px;"><strong>Passport Validity:</strong> Must be valid for at least 6 months beyond arrival date</p>
+                    <p style="margin-top: 12px;"><strong>Note:</strong> Always verify current requirements before travel as policies may change</p>
+                </div>
+
+                <div class="info-card">
+                    <h4>🇭🇰 Hong Kong</h4>
+                    <p><strong>Visa Status:</strong> Visa-free entry for up to 90 days</p>
+                    <p style="margin-top: 12px;"><strong>Passport Validity:</strong> Must be valid for at least 1 month beyond intended stay</p>
+                    <p style="margin-top: 12px;"><strong>Status:</strong> Special Administrative Region with separate entry requirements</p>
+                </div>
+
+                <div class="info-card">
+                    <h4>🇨🇳 Mainland China</h4>
+                    <p><strong>Visa Option:</strong> 144-hour visa-free transit available for eligible travelers</p>
+                    <p style="margin-top: 12px;"><strong>Requirements:</strong> Must arrive/depart via specific ports and remain within designated regions</p>
+                    <p style="margin-top: 12px;"><strong>Alternative:</strong> Apply for tourist visa in advance if not eligible for transit exemption</p>
+                </div>
+
+                <div class="info-card">
+                    <h4>🇲🇴 Macau</h4>
+                    <p><strong>Visa Status:</strong> Visa-free entry for up to 30 days</p>
+                    <p style="margin-top: 12px;"><strong>Status:</strong> Special Administrative Region with Portuguese heritage</p>
+                    <p style="margin-top: 12px;"><strong>Access:</strong> Easy ferry connection from Hong Kong</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Currency Section -->
+        <div id="currency" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Currency Guide</h2>
+                <p class="section-subtitle">Exchange rates and payment methods across destinations</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>Vietnam</h4>
+                    <p><strong>Currency:</strong> Vietnamese Dong (VND)</p>
+                    <p style="margin-top: 12px;"><strong>Exchange Rate:</strong><br>≈ 25,000 VND = 1 USD</p>
+                </div>
+
+                <div class="info-card">
+                    <h4>Hong Kong</h4>
+                    <p><strong>Currency:</strong> Hong Kong Dollar (HKD)</p>
+                    <p style="margin-top: 12px;"><strong>Exchange Rate:</strong><br>≈ 7.8 HKD = 1 USD</p>
+                </div>
+
+                <div class="info-card">
+                    <h4>Macau</h4>
+                    <p><strong>Currency:</strong> Macau Pataca (MOP)</p>
+                    <p style="margin-top: 12px;"><strong>Also Accepted:</strong> Hong Kong Dollar (HKD)</p>
+                    <p style="margin-top: 12px;"><strong>Exchange Rate:</strong><br>≈ 8 MOP = 1 USD</p>
+                </div>
+
+                <div class="info-card">
+                    <h4>Mainland China</h4>
+                    <p><strong>Currency:</strong> Chinese Yuan (CNY)</p>
+                    <p style="margin-top: 12px;"><strong>Exchange Rate:</strong><br>≈ 7.2 CNY = 1 USD</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>💡 Pro Money Tips</strong>
+                <p style="margin-top: 8px;">Bring USD for exchange at favorable rates · Use ATMs for best exchange rates · Credit cards widely accepted in major cities · Keep small bills for local markets and taxis</p>
+            </div>
+        </div>
+
+        <!-- Transportation Section -->
+        <div id="transport" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Transportation Guide</h2>
+                <p class="section-subtitle">Efficient transit options for urban mobility</p>
+            </div>
+
+            <div class="city-card">
+                <h3>Ho Chi Minh City</h3>
+                <div class="info-row" style="margin-top: 20px;">
+                    <span class="info-label">Primary App</span>
+                    <span class="info-value">Grab (Southeast Asian ride-hailing) — most convenient for tourists</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Taxis</span>
+                    <span class="info-value">Affordable and accessible · Reputable companies: Mai Linh, Vinasun</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Payment</span>
+                    <span class="info-value">Cash preferred · Grab accepts cards</span>
+                </div>
+            </div>
+
+            <div class="city-card">
+                <h3>Hong Kong</h3>
+                <div class="info-row" style="margin-top: 20px;">
+                    <span class="info-label">Octopus Card</span>
+                    <span class="info-value">ESSENTIAL — Works on MTR, buses, trams, ferries, and even convenience stores</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">MTR</span>
+                    <span class="info-value">World-class subway system covering all major areas with English signage</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Star Ferry</span>
+                    <span class="info-value">Iconic ferry service between Hong Kong Island and Kowloon</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Trams</span>
+                    <span class="info-value">Historic double-decker trams on Hong Kong Island ("Ding Ding")</span>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <strong>🎯 Priority Action</strong>
+                <p style="margin-top: 8px;">Purchase Octopus Card immediately upon arrival at Hong Kong airport or any MTR station. Rechargeable, refundable, and will save significant time and money throughout your stay.</p>
+            </div>
+
+            <div class="city-card">
+                <h3>Mainland China (Guangzhou & Shenzhen)</h3>
+                <div class="info-row" style="margin-top: 20px;">
+                    <span class="info-label">Digital Payments</span>
+                    <span class="info-value">Alipay or WeChat Pay for seamless payments and metro access</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Metro</span>
+                    <span class="info-value">Purchase single-journey tickets or day passes at metro stations</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">High-Speed Rail</span>
+                    <span class="info-value">Hong Kong to Guangzhou in just 50 minutes</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cities Section -->
+        <div id="cities" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Destination Histories</h2>
+                <p class="section-subtitle">Understanding the cultural context of each city</p>
+            </div>
+
+            <div class="city-card">
+                <h3>Ho Chi Minh City, Vietnam</h3>
+                <p>Ho Chi Minh City, formerly known as Saigon, is Vietnam's largest city and economic hub. Founded as a small fishing village in the 17th century, it grew into a major port city under French colonial rule from 1859 to 1954. The city was the capital of South Vietnam during the Vietnam War and was renamed Ho Chi Minh City in 1976 after reunification. Today, it blends French colonial architecture with modern skyscrapers, bustling markets, and rich cultural heritage. The city is known for its vibrant street life, historical landmarks like the Reunification Palace and War Remnants Museum, and serves as a gateway to exploring the Mekong Delta and Cu Chi Tunnels.</p>
+            </div>
+
+            <div class="city-card">
+                <h3>Hong Kong, China (SAR)</h3>
+                <p>Hong Kong is a Special Administrative Region of China with a unique history and identity. Originally a fishing village, it was ceded to Britain in 1842 after the First Opium War and developed into a major trading port. For over 150 years, Hong Kong was a British colony, which shaped its legal system, architecture, and culture. It was returned to China in 1997 under the "one country, two systems" principle. Today, Hong Kong is a global financial center known for its stunning skyline, Victoria Harbour, vibrant food scene, and blend of Eastern and Western influences. The city features iconic attractions like Victoria Peak, Star Ferry, Temple Street Night Market, and Hong Kong Disneyland.</p>
+            </div>
+
+            <div class="city-card">
+                <h3>Macau, China (SAR)</h3>
+                <p>Macau is a Special Administrative Region of China with a fascinating Portuguese heritage. Colonized by Portugal in 1557, it became the first and last European colony in China, maintaining Portuguese rule until 1999 when it was returned to China. This 442-year colonial period left an indelible mark on the city's architecture, cuisine, and culture. Known as the "Las Vegas of Asia," Macau is famous for its casinos, but it also boasts a UNESCO World Heritage-listed historic center featuring Portuguese colonial buildings, Chinese temples, and fusion cuisine. The Ruins of St. Paul's, Senado Square, and A-Ma Temple showcase this unique East-meets-West cultural blend.</p>
+            </div>
+
+            <div class="city-card">
+                <h3>Guangzhou, China</h3>
+                <p>Guangzhou, the capital of Guangdong Province, is one of China's oldest and most important cities with over 2,200 years of history. As the starting point of the ancient Maritime Silk Road, it has been a major trading port since the 3rd century. During the Qing Dynasty, Guangzhou was the only Chinese port open to foreign trade for nearly a century. The city played a crucial role in modern Chinese history, serving as the birthplace of the 1911 Revolution that ended imperial rule. Today, Guangzhou is a bustling metropolis known for its Cantonese culture, world-class dim sum, the iconic Canton Tower, and a blend of ancient temples and ultramodern architecture.</p>
+            </div>
+
+            <div class="city-card">
+                <h3>Shenzhen, China</h3>
+                <p>Shenzhen has one of the most remarkable transformation stories in modern history. In 1979, it was a small fishing village with a population of about 30,000. That year, China's leader Deng Xiaoping designated it as the country's first Special Economic Zone, launching China's "reform and opening up" policy. Within just four decades, Shenzhen exploded into a megacity of over 12 million people and became China's technology and innovation hub, often called "China's Silicon Valley." It's home to tech giants like Huawei, Tencent, and DJI. Despite its modernity, Shenzhen offers attractions like Window of the World, OCT-LOFT art district, and proximity to traditional Chinese culture.</p>
+            </div>
+        </div>
+
+        <!-- Itinerary Section -->
+        <div id="itinerary" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Detailed Itinerary</h2>
+                <p class="section-subtitle">Your comprehensive 17-day journey broken down by phase</p>
+            </div>
+
+            <!-- Phase 1 -->
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span class="accordion-title">
+                        <span style="color: var(--accent-gold);">Phase 1</span>
+                        Ho Chi Minh City, Vietnam (May 24-29)
+                    </span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="day-card">
+                            <h4 class="day-title">Day 0 — Saturday, May 23, 2026</h4>
+                            <p class="day-subtitle">Pre-Flight Preparation · Nashville</p>
+                            <ul class="activity-list">
+                                <li>Check into Hilton BNA Nashville Airport Hotel</li>
+                                <li>Final packing and travel document verification</li>
+                                <li>Evening: Relax and prepare for early departure</li>
+                                <li>Set alarms and confirm Delta Airlines flight details</li>
+                            </ul>
+                        </div>
+
+                        <div class="day-card">
+                            <h4 class="day-title">Travel Day — Sunday, May 24, 2026</h4>
+                            <p class="day-subtitle">Full Day of Flights</p>
+                            <ul class="activity-list">
+                                <li>Depart Nashville on Delta Airlines (domestic flight)</li>
+                                <li>Connect to international flight(s) to Ho Chi Minh City</li>
+                                <li>Full day of travel across multiple time zones</li>
+                                <li>In-flight entertainment and rest</li>
+                                <li>Cross International Date Line</li>
+                            </ul>
+                        </div>
+
+                        <div class="day-card">
+                            <h4 class="day-title">Day 1 — Monday, May 25, 2026</h4>
+                            <p class="day-subtitle">Arrival in Ho Chi Minh City</p>
+                            <ul class="activity-list">
+                                <li>Evening: Arrive at Tan Son Nhat International Airport</li>
+                                <li>Clear customs and immigration</li>
+                                <li>Transfer to Hilton Saigon and check in</li>
+                                <li>Rest and recover from long flight</li>
+                                <li>Late evening: Light dinner near hotel or room service</li>
+                            </ul>
+                        </div>
+
+                        <div class="day-card">
+                            <h4 class="day-title">Day 2 — Tuesday, May 26, 2026</h4>
+                            <p class="day-subtitle">City Orientation & Exploration</p>
+                            <ul class="activity-list">
+                                <li>Morning: Explore District 1 — Nguyen Hue Walking Street</li>
+                                <li>Visit Saigon Opera House</li>
+                                <li>Lunch at a local pho restaurant</li>
+                                <li>Afternoon: Ben Thanh Market for shopping and atmosphere</li>
+                                <li>Evening: Dinner at Ben Thanh Night Market (authentic street food)</li>
+                                <li>Evening stroll along the Saigon River</li>
+                            </ul>
+                        </div>
+
+                        <div class="day-card">
+                            <h4 class="day-title">Day 3 — Wednesday, May 27, 2026</h4>
+                            <p class="day-subtitle">Historical & Cultural Immersion</p>
+                            <ul class="activity-list">
+                                <li>Morning: Independence Palace (Reunification Palace)</li>
+                                <li>War Remnants Museum (powerful Vietnam War history, 2-3 hours)</li>
+                                <li>Lunch at a local pho restaurant</li>
+                                <li>Afternoon: Notre Dame Cathedral & Central Post Office (French colonial architecture)</li>
+                                <li>Ben Thanh Market for souvenirs</li>
+                                <li>Evening: Dinner cruise on the Saigon River</li>
+                            </ul>
+                        </div>
+
+                        <div class="day-card">
+                            <h4 class="day-title">Day 4 — Thursday, May 28, 2026</h4>
+                            <p class="day-subtitle">Cu Chi Tunnels Day Trip</p>
+                            <ul class="activity-list">
+                                <li>Full-day excursion to Cu Chi Tunnels (underground network from Vietnam War)</li>
+                                <li>Guided tour through tunnels and war history exhibits</li>
+                                <li>Lunch included in tour</li>
+                                <li>Return to the city in the afternoon</li>
+                                <li>Evening: Rooftop bar at Bitexco Financial Tower (Saigon Skydeck)</li>
+                                <li>Explore Bui Vien Street nightlife</li>
+                            </ul>
+                        </div>
+
+                        <div class="day-card">
+                            <h4 class="day-title">Day 5 — Friday, May 29, 2026</h4>
+                            <p class="day-subtitle">Morning in HCMC & Flight to Hong Kong</p>
+                            <ul class="activity-list">
+                                <li>Morning: Visit Jade Emperor Pagoda (beautiful Taoist temple)</li>
+                                <li>Last-minute shopping at Saigon Square</li>
+                                <li>Lunch at a riverside restaurant</li>
+                                <li>Afternoon: Depart for the airport</li>
+                                <li>Fly to Hong Kong on Cathay Pacific Airlines</li>
+                                <li>Evening: Arrive in Hong Kong, check into Lanson Place</li>
+                                <li>Late dinner in Tsim Sha Tsui or nearby Causeway Bay</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span class="accordion-title">
+                        <span style="color: var(--accent-gold);">Phase 2</span>
+                        Hong Kong & Regional Adventures (May 30 - June 6)
+                    </span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="day-card">
+                            <h4 class="day-title">Day 6 — Saturday, May 30, 2026</h4>
+                            <p class="day-subtitle">Victoria Peak & Hong Kong Island</p>
+                            <ul class="activity-list">
+                                <li>Morning: Victoria Peak via Peak Tram (iconic views of Hong Kong)</li>
+                                <li>Sky Terrace 428 observation deck</li>
+                                <li>Peak Circle Walk for panoramic photography</li>
+                                <li>Lunch at Peak Galleria</li>
+                                <li>Afternoon: Ride historic Star Ferry from Central to Tsim Sha Tsui</li>
+                                <li>Walk along the Avenue of Stars</li>
+                                <li>Evening: Symphony of Lights show from Tsim Sha Tsui Promenade (8:00 PM)</li>
+                                <li>Dinner in Temple Street Night Market</li>
+                            </ul>
+                        </div>
+
+                        <div class="day-card">
+                            <h4 class="day-title">Day 7 — Sunday, May 31, 2026</h4>
+                            <p class="day-subtitle">Hong Kong Disneyland</p>
+                            <ul class="activity-list">
+                                <li>Full day at Hong Kong Disneyland (Lantau Island)</li>
+                                <li>Arrive early for maximum ride time</li>
+                                <li>Explore: Adventureland, Fantasyland, Tomorrowland, Toy Story Land</li>
+                                <li>Must-see: Castle of Magical Dreams, Mystic Manor, Big Grizzly Mountain</li>
+                                <li>Lunch and dinner inside the park</li>
+                                <li>Evening: Fireworks spectacular (check schedule)</li>
+                                <li>Return to hotel</li>
+                            </ul>
+                        </div>
+
+                        <div class="day-card">
+                            <h4 class="day-title">Day 8 — Monday, June 1, 2026</h4>
+                            <p class="day-subtitle">Macau Day Trip</p>
+                            <ul class="activity-list">
+                                <li>Morning: TurboJet ferry to Macau from Hong Kong (1 hour)</li>
+                                <li>Visit Ruins of St. Paul's (UNESCO World Heritage site)</li>
+                                <li>Senado Square for Portuguese colonial architecture and shopping</li>
+                                <li>Lunch: Authentic Portuguese-Macanese cuisine (African chicken, egg tarts)</li>
+                                <li>Afternoon: A-Ma Temple (the oldest temple in Macau)</li>
+                                <li>Optional: Visit The Venetian Macau casino resort</li>
+                                <li>Macau Tower for views and adventure activities</li>
+                                <li>Evening: Return ferry to Hong Kong</li>
+                            </ul>
+                        </div>
+
+                        <div class="day-card">
+                            <h4 class="day-title">Day 9 — Tuesday, June 2, 2026</h4>
+                            <p class="day-subtitle">Shenzhen Day Trip</p>
+                            <ul class="activity-list">
+                                <li>Morning: Cross-border to Shenzhen (MTR to Lok Ma Chau or Futian checkpoint)</li>
+                                <li>Visit Window of the World theme park (replicas of global landmarks)</li>
+                                <li>Splendid China Folk Village (miniature Chinese attractions)</li>
+                                <li>Lunch at Dongmen Pedestrian Street</li>
+                                <li>Afternoon: Shopping at Luohu Commercial City</li>
+                                <li>OCT-LOFT Creative Culture Park (contemporary art district)</li>
+                                <li>Evening: Return to Hong Kong</li>
+                            </ul>
+                        </div>
+
+                        <div class="day-card">
+                            <h4 class="day-title">Day 10 — Wednesday, June 3, 2026</h4>
+                            <p class="day-subtitle">Guangzhou Day Trip</p>
+                            <ul class="activity-list">
+                                <li>Morning: High-speed train to Guangzhou from Hong Kong (50 minutes)</li>
+                                <li>Visit Canton Tower for city views</li>
+                                <li>Chen Clan Ancestral Hall (traditional Cantonese architecture)</li>
+                                <li>Lunch: Authentic Cantonese dim sum</li>
+                                <li>Afternoon: Shamian Island (European colonial architecture, peaceful walks)</li>
+                                <li>Beijing Road Pedestrian Street for shopping</li>
+                                <li>Optional: Sacred Heart Cathedral</li>
+                                <li>Evening: Return to Hong Kong</li>
+                            </ul>
+                        </div>
+
+                        <div class="day-card">
+                            <h4 class="day-title">Day 11 — Thursday, June 4, 2026</h4>
+                            <p class="day-subtitle">Lantau Island & Traditional Hong Kong</p>
+                            <ul class="activity-list">
+                                <li>Morning: Ngong Ping 360 cable car to Lantau Island</li>
+                                <li>Visit Tian Tan Buddha (Big Buddha statue)</li>
+                                <li>Po Lin Monastery</li>
+                                <li>Lunch: Vegetarian meal at the monastery</li>
+                                <li>Afternoon: Tai O Fishing Village (stilt houses, traditional way of life)</li>
+                                <li>Optional: Boat tour to see pink dolphins</li>
+                                <li>Evening: Return to city, dinner in Mong Kok for local street food</li>
+                            </ul>
+                        </div>
+
+                        <div class="day-card">
+                            <h4 class="day-title">Day 12 — Friday, June 5, 2026</h4>
+                            <p class="day-subtitle">Kowloon & Shopping Day</p>
+                            <ul class="activity-list">
+                                <li>Morning: Wong Tai Sin Temple (popular Taoist temple)</li>
+                                <li>Chi Lin Nunnery and Nan Lian Garden (Tang Dynasty architecture)</li>
+                                <li>Lunch in the Diamond Hill area</li>
+                                <li>Afternoon: Shopping at Ladies' Market (Mong Kok)</li>
+                                <li>Flower Market and Goldfish Market</li>
+                                <li>Langham Place shopping mall</li>
+                                <li>Evening: Dinner at Temple Street Night Market</li>
+                                <li>Last night's views from Sky100 Observation Deck</li>
+                            </ul>
+                        </div>
+
+                        <div class="day-card">
+                            <h4 class="day-title">Day 13 — Saturday, June 6, 2026</h4>
+                            <p class="day-subtitle">Morning in Hong Kong & Return to HCMC</p>
+                            <ul class="activity-list">
+                                <li>Morning: Last-minute shopping in Central or Causeway Bay</li>
+                                <li>Visit Man Mo Temple (oldest temple in Hong Kong)</li>
+                                <li>Dim sum brunch</li>
+                                <li>Afternoon: Depart for the airport</li>
+                                <li>Fly back to Ho Chi Minh City on Cathay Pacific</li>
+                                <li>Evening: Arrive back in Ho Chi Minh City, check into Hilton Saigon</li>
+                                <li>Relaxing evening and dinner near the hotel</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span class="accordion-title">
+                        <span style="color: var(--accent-gold);">Phase 3</span>
+                        Return to Ho Chi Minh City (June 7-8)
+                    </span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="day-card">
+                            <h4 class="day-title">Day 14 — Sunday, June 7, 2026</h4>
+                            <p class="day-subtitle">Mekong Delta Day Trip</p>
+                            <ul class="activity-list">
+                                <li>Full-day excursion to the Mekong Delta</li>
+                                <li>Boat ride through canals and waterways</li>
+                                <li>Visit floating markets (if timing allows)</li>
+                                <li>Tropical fruit tasting at local orchards</li>
+                                <li>Traditional Vietnamese lunch included</li>
+                                <li>Visit coconut candy workshop and honey farm</li>
+                                <li>Return to Ho Chi Minh City in late afternoon</li>
+                                <li>Evening: Farewell dinner at a rooftop restaurant</li>
+                            </ul>
+                        </div>
+
+                        <div class="day-card">
+                            <h4 class="day-title">Day 15 — Monday, June 8, 2026</h4>
+                            <p class="day-subtitle">Departure Day</p>
+                            <ul class="activity-list">
+                                <li>Morning: Leisurely breakfast and hotel check-out</li>
+                                <li>Last-minute souvenir shopping if time permits</li>
+                                <li>Depart for Tan Son Nhat International Airport</li>
+                                <li>Departure to home destination</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Travel Tips Section -->
+        <div id="tips" class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Professional Travel Tips</h2>
+                <p class="section-subtitle">Essential insights for experienced travelers</p>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span class="accordion-title">🎒 Packing Essentials</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="tip-section">
+                            <ul>
+                                <li>Lightweight, breathable clothing (hot and humid weather expected)</li>
+                                <li>Comfortable walking shoes (extensive walking and temple visits)</li>
+                                <li>Sun protection: quality hat, polarized sunglasses, high-SPF sunscreen</li>
+                                <li>Light rain jacket or compact umbrella (monsoon season possibility)</li>
+                                <li>Power adapters: Type A/C for Vietnam, Type G for Hong Kong</li>
+                                <li>Travel insurance documents and digital backups</li>
+                                <li>Photocopies of passport and important documents</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span class="accordion-title">🏥 Health & Safety</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="tip-section">
+                            <ul>
+                                <li>Drink only bottled water in Vietnam</li>
+                                <li>Be selective with street food — choose busy, popular stalls</li>
+                                <li>Bring basic medications and first-aid supplies</li>
+                                <li>Keep valuables secure; remain aware in crowded areas</li>
+                                <li>Purchase comprehensive travel insurance covering medical emergencies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span class="accordion-title">💵 Money-Saving Tips</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="tip-section">
+                            <ul>
+                                <li>Book tours and attractions in advance online for discounts</li>
+                                <li>Eat where locals eat for authentic and affordable meals</li>
+                                <li>Use public transportation — very affordable and efficient in Hong Kong</li>
+                                <li>Negotiate prices at markets in Vietnam (expected practice)</li>
+                                <li>Purchase Octopus Card early for savings on Hong Kong transport</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span class="accordion-title">🙏 Cultural Etiquette</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="tip-section">
+                            <ul>
+                                <li>Remove shoes when entering temples and some restaurants</li>
+                                <li>Dress modestly when visiting religious sites (cover shoulders and knees)</li>
+                                <li>Learn basic phrases in Vietnamese and Cantonese — greatly appreciated</li>
+                                <li>Tipping: Not expected in Vietnam, discretionary in Hong Kong (10% appreciated)</li>
+                                <li>Be respectful when taking photos of people — always ask first</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span class="accordion-title">📱 Communication</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="tip-section">
+                            <ul>
+                                <li>Purchase local SIM cards or activate international roaming plan</li>
+                                <li>Download offline maps (Google Maps functions well)</li>
+                                <li>Install translation apps (Google Translate with offline languages)</li>
+                                <li>Have hotel addresses in local language for taxi drivers</li>
+                                <li>WhatsApp is widely used in both countries for communication</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span class="accordion-title">🍜 Food Recommendations</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-inner">
+                        <div class="tip-section">
+                            <h4>Vietnam Must-Try</h4>
+                            <ul>
+                                <li>Pho (iconic noodle soup)</li>
+                                <li>Banh Mi (Vietnamese sandwich)</li>
+                                <li>Spring Rolls (fresh and fried varieties)</li>
+                                <li>Bun Cha (grilled pork with noodles)</li>
+                                <li>Vietnamese coffee (strong and sweet with condensed milk)</li>
+                            </ul>
+
+                            <h4 style="margin-top: 28px;">Hong Kong Must-Try</h4>
+                            <ul>
+                                <li>Dim Sum (steamed dumplings and small plates)</li>
+                                <li>Roast Goose (Cantonese specialty)</li>
+                                <li>Wonton Noodles</li>
+                                <li>Egg Tarts (Portuguese-style)</li>
+                                <li>Pineapple Buns (bo lo bao)</li>
+                                <li>Hong Kong-style milk tea</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation System
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show selected section
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+
+            // Update nav cards
+            document.querySelectorAll('.nav-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            event.target.closest('.nav-card').classList.add('active');
+
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Accordion System
+        function toggleAccordion(header) {
+            const accordionItem = header.parentElement;
+            const wasActive = accordionItem.classList.contains('active');
+
+            // Toggle the clicked accordion
+            if (wasActive) {
+                accordionItem.classList.remove('active');
+            } else {
+                accordionItem.classList.add('active');
+            }
+        }
+
+        // Smooth entrance animation
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.nav-card, .card, .info-card').forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, index * 50);
+            });
+        });
+    </script>
+</body>
+</html>
